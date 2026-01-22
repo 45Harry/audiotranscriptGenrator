@@ -39,3 +39,15 @@ To split new audio files and process them:
    ```bash
    python baking.py
    ```
+
+This Python script downloads audio from a YouTube video and converts it into a WAV file using the yt-dlp library.
+It first cleans the YouTube URL by removing tracking or extra query parameters to avoid download issues.
+The script selects the best available audio format from the video source.
+Using FFmpeg post-processing, it extracts the audio and converts it into a high-quality WAV file.
+The output file is saved with a fixed, simplified filename to avoid problems with long or special characters.
+Playlist downloads are disabled to ensure only a single video is processed.
+Download progress and logs are shown in the terminal for transparency.
+The script includes basic error handling to catch and display download or conversion errors.
+It is suitable for preparing audio data for tasks like speech-to-text, audio analysis, or machine learning.
+The YouTube link is hardcoded for reliability when terminal input fails.
+This approach is efficient for extracting clean audio from online video sources.
