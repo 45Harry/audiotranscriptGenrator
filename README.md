@@ -51,3 +51,21 @@ The script includes basic error handling to catch and display download or conver
 It is suitable for preparing audio data for tasks like speech-to-text, audio analysis, or machine learning.
 The YouTube link is hardcoded for reliability when terminal input fails.
 This approach is efficient for extracting clean audio from online video sources.
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This Python script splits a long WAV audio file into two equal halves using FFmpeg.
+It is designed for handling very large audio files that are difficult to process at once.
+The midpoint of the audio is manually specified based on the total duration of the file.
+The script calculates absolute file paths to ensure compatibility across systems.
+Two output audio files are created in the same directory as the original file.
+FFmpeg is used with stream copy mode to avoid re-encoding and preserve audio quality.
+The first command extracts audio from the start up to the midpoint.
+The second command extracts audio starting from the midpoint to the end.
+Progress and success messages are printed to the terminal for clarity.
+Basic error handling is included to capture FFmpeg execution failures.
+This approach is useful for speech-to-text pipelines, long-form audio analysis, or batch AI processing.
+The script helps reduce memory and time constraints when working with multi-hour audio files.
+
